@@ -1,6 +1,6 @@
 package ru.netology.domain;
 
-public class Repository {
+public class AfishaRepository {
     private static Movie[] movies = new Movie[0];
 
     public static void save(Movie movie) {

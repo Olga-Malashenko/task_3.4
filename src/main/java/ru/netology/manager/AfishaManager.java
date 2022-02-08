@@ -1,11 +1,12 @@
 package ru.netology.manager;
 
 
+import ru.netology.domain.AfishaRepository;
 import ru.netology.domain.Movie;
 
 public class AfishaManager {
-    private CartRepository repository;
-    public AfishaManager(CartRepository repository) {
+    private AfishaRepository repository;
+    public AfishaManager(AfishaRepository repository) {
         this.repository = repository;
     }
 //    public static Movie[] movies;
