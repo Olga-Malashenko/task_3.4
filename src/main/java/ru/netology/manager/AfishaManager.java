@@ -1,7 +1,9 @@
 package ru.netology.manager;
 
+
+
 public class AfishaManager {
-    private static Movie[] movies;
+    public static Movie[] movies;
     private static int limitForFeed;
 
     public AfishaManager() {
@@ -11,6 +13,22 @@ public class AfishaManager {
         this.movies = movies;
         this.limitForFeed = limitForFeed;
     }
+
+//    public static Movie[] getMovies() {
+//        return movies;
+//    }
+//
+//    public static void setMovies(Movie[] movies) {
+//        AfishaManager.movies = movies;
+//    }
+//
+//    public static int getLimitForFeed() {
+//        return limitForFeed;
+//    }
+//
+//    public static void setLimitForFeed(int limitForFeed) {
+//        AfishaManager.limitForFeed = limitForFeed;
+//    }
 
     public static void save(Movie movie) {
 

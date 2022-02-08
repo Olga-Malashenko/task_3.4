@@ -3,6 +3,7 @@ package ru.netology.manager;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static ru.netology.manager.AfishaManager.movies;
 
 class AfishaManagerTest {
 
@@ -18,7 +19,7 @@ class AfishaManagerTest {
 
 //        movie.save();
 
-        AfishaManager[] actual = AfishaManager.getAll();
+        Movie[] actual = AfishaManager.getAll();
         AfishaManager[] expected = new AfishaManager[]{first};
 
         assertArrayEquals(expected, actual);
