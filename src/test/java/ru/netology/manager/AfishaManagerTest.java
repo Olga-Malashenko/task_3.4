@@ -1,44 +1,39 @@
 package ru.netology.manager;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import ru.netology.domain.AfishaRepository;
 import ru.netology.domain.Movie;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static ru.netology.manager.AfishaManager.movies;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.verify;
 
 class AfishaManagerTest {
+    @Mock
+    private AfishaRepository repository = Mockito.mock(AfishaRepository.class);
+    @InjectMocks
+    private AfishaManager manager = new AfishaManager(repository);
 
     @Test
-    public void shouldGetForEmpty() {
-        AfishaManager movie = new AfishaManager();
+    public void shouldAdd() {
+        Movie[] returned = {first, second, third};
+        doReturn(returned).when(repository.findAll());
+        verify(repository).findAll();
 
-        AfishaManager first = new AfishaManager(movies,1); // что-то я потерялась совсем ((
-        // где какой класс писать, где какой параметр... НЕ понимаю, как мы передаем этот объект с фильмом в афишу
-
-        AfishaManager.save();
-
-
-//        movie.save();
-
-        Movie[] actual = AfishaManager.getAll();
-        AfishaManager[] expected = new AfishaManager[]{first};
-
-        assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldGetForSeveral() {
-        AfishaManager movie = new AfishaManager();
+    void getAll() {
 
-        AfishaManager first = new AfishaManager();
-
-        AfishaManager.save();
-
-        movie.save();
-
-        Movie[] actual = AfishaManager.getAll();
-        AfishaManager[] expected = new AfishaManager[]{first};
-
-        assertArrayEquals(expected, actual);
+        verify(repository).findAll();
     }
+
+    @Test
+    void removeById() {
+
+        verify(repository).findAll();
+    }
+
 }

@@ -5,7 +5,7 @@ import ru.netology.domain.AfishaRepository;
 import ru.netology.domain.Movie;
 
 public class AfishaManager {
-    private AfishaRepository repository;
+    private static AfishaRepository repository;
     public AfishaManager(AfishaRepository repository) {
         this.repository = repository;
     }
