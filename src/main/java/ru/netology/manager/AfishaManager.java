@@ -31,7 +31,8 @@ public class AfishaManager {
         } else {
             resultLenght = limitForFeed;
         }
-        Movie[] result = new Movie[resultLenght];
+        Movie[] result = new Movie[resultLenght]; // не понимаю разницы между Movie[] и AfishaManager[]
+         // когда одно используем, когда другое, или это одно и то же ?
         for (int i = 0; i < resultLenght; i++) {
             int index = resultLenght - i - 1;
             result[i] = movies[index];

@@ -3,9 +3,11 @@ package ru.netology.manager;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static ru.netology.manager.AfishaManager.movies;
+
 
 class AfishaManagerTest {
+    private Movie[] movies;
+
     public static void main(String[] movies) {
         Movie first = new Movie(1, 1, 'urlImg1', 'bloodshot', 'action', 0, 'urlPg1');
         Movie second = new Movie(2, 2, 'urlImg2', 'forward', 'cartoon', 0, 'urlPg2');
@@ -46,7 +48,7 @@ class AfishaManagerTest {
 
         movie.save();
 
-        Movie[] actual = AfishaManager.getAll();
+        AfishaManager[] actual = AfishaManager.getAll();
         AfishaManager[] expected = new AfishaManager[]{first};
 
         assertArrayEquals(expected, actual);
