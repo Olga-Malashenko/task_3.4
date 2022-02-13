@@ -6,24 +6,26 @@ import ru.netology.domain.Movie;
 
 public class AfishaManager {
     private static AfishaRepository repository;
+
+
     public AfishaManager(AfishaRepository repository) {
         this.repository = repository;
     }
-//    public static Movie[] movies;
-//    private static int limitForFeed;
 
-    public void add(Movie movie) {
-        repository.save(movie);
+
+    public static Movie[] movies;
+    private static int limitForFeed;
+
+
+
+
+    public AfishaManager() {
     }
 
-//
-//    public AfishaManager() {
-//    }
-//
-//    public AfishaManager(Movie[] movies, int limitForFeed) {
-//        this.movies = movies;
-//        this.limitForFeed = limitForFeed;
-//    }
+    public AfishaManager(Movie[] movies, int limitForFeed) {
+        this.movies = movies;
+        this.limitForFeed = limitForFeed;
+    }
 
 //    public static Movie[] getMovies() {
 //        return movies;
@@ -44,6 +46,10 @@ public class AfishaManager {
 
 
 //    public Movie[] findAll() {return movies;}
+
+    public void add(Movie movie) {
+        repository.save(movie);
+    }
 
     public static Movie[] getAll() {
         Movie[] movies = repository.findAll();
