@@ -14,7 +14,7 @@ public class AfishaManager {
 
 
     public static Movie[] movies;
-    private static int limitForFeed;
+    private static int limitForFeed;git
 
 
 
