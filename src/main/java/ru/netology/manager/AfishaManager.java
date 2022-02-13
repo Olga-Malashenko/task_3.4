@@ -24,7 +24,7 @@ public class AfishaManager {
 
 //    public Movie[] findAll() {return movies;}
 
-    public static Movie[] getAll() {
+    public static AfishaManager[] getAll() {
         int resultLenght;
         if (limitForFeed == 0) {
             resultLenght = 10;
