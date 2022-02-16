@@ -5,62 +5,39 @@ import ru.netology.domain.AfishaRepository;
 import ru.netology.domain.Movie;
 
 public class AfishaManager {
-    private static AfishaRepository repository;
+    private AfishaRepository repository;
+    private int limitForFeed;
 
-
-    public AfishaManager(AfishaRepository repository) {
+    public AfishaManager(AfishaRepository repository, int limitForFeed) {
         this.repository = repository;
-    }
-
-
-    public static Movie[] movies;
-    private static int limitForFeed;
-
-
-
-
-    public AfishaManager() {
-    }
-
-    public AfishaManager(Movie[] movies, int limitForFeed) {
-        this.movies = movies;
         this.limitForFeed = limitForFeed;
     }
 
-//    public static Movie[] getMovies() {
-//        return movies;
-//    }
-//
-//    public static void setMovies(Movie[] movies) {
-//        AfishaManager.movies = movies;
-//    }
-//
-//    public static int getLimitForFeed() {
-//        return limitForFeed;
-//    }
-//
-//    public static void setLimitForFeed(int limitForFeed) {
-//        AfishaManager.limitForFeed = limitForFeed;
+//    public AfishaManager(AfishaRepository repository) {
+//        this.repository = repository;
 //    }
 
 
+    public int getLimitForFeed() {
+        return limitForFeed;
+    }
 
-//    public Movie[] findAll() {return movies;}
+    public void setLimitForFeed(int limitForFeed) {
+        this.limitForFeed = limitForFeed;
+    }
 
     public void add(Movie movie) {
         repository.save(movie);
     }
 
-    public static Movie[] getAll() {
+    public Movie[] getAllFeed() {
         Movie[] movies = repository.findAll();
-
         int resultLenght;
-        if (limitForFeed == 0) {
-            resultLenght = 10;
+        if (movies.length < limitForFeed) {
+            resultLenght = movies.length;
         } else {
             resultLenght = limitForFeed;
         }
-
         Movie[] result = new Movie[resultLenght];
         for (int i = 0; i < resultLenght; i++) {
             int index = resultLenght - i - 1;
@@ -69,8 +46,16 @@ public class AfishaManager {
         return result;
     }
 
+    public void findById(int id) {
+        repository.findById(id);
+    }
+
     public void removeById(int id) {
         repository.removeById(id);
+    }
+
+    public void removeAll() {
+        repository.removeAll();
     }
 
 }
