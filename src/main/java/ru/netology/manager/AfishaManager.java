@@ -26,6 +26,7 @@ public class AfishaManager {
         this.limitForFeed = limitForFeed;
     }
 
+
     public void add(Movie movie) {
         repository.save(movie);
     }
@@ -61,5 +62,8 @@ public class AfishaManager {
 //    public void removeAll() {
 //        repository.removeAll();
 //    }
+
+
+
 
 }

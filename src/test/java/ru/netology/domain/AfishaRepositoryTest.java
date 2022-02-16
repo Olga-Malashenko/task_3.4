@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 //class AfishaRepositoryTest {  насколько я поняла,
-// по заданию нам не надо тестить репозиторий
+// нам не надо тестить репозиторий,
+// наоборот, создаем ложный для тестирования логики
 
 //
 //    @Test
