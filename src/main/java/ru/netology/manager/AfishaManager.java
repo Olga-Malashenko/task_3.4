@@ -4,8 +4,7 @@ public class AfishaManager {
     private Movie[] movies = new Movie[0];
     private int limitForFeed = 10;
 
-    public AfishaManager(Movie[] movies, int limitForFeed) {
-        this.movies = movies;
+    public AfishaManager(int limitForFeed) {
         this.limitForFeed = limitForFeed;
     }
 
