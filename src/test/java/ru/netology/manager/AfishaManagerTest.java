@@ -42,5 +42,49 @@ public class AfishaManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldGetOneForParameters() {
+        AfishaManager manager = new AfishaManager(1);
+        manager.add(sixth);
+
+        Movie[] actual = manager.getAll();
+        Movie[] expected = new Movie[]{sixth};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetSeveralForParametersIfLimitLess() {
+        AfishaManager manager = new AfishaManager(3);
+        manager.add(first);
+        manager.add(second);
+        manager.add(third);
+        manager.add(fourth);
+        manager.add(fifth);
+        manager.add(sixth);
+        manager.add(seventh);
+
+        Movie[] actual = manager.getAll();
+        Movie[] expected = new Movie[]{third,second,first};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetSeveralForParametersIfLimitMore() {
+        AfishaManager manager = new AfishaManager(8);
+        manager.add(first);
+        manager.add(second);
+        manager.add(third);
+        manager.add(fourth);
+        manager.add(fifth);
+        manager.add(sixth);
+        manager.add(seventh);
+
+        Movie[] actual = manager.getAll();
+        Movie[] expected = new Movie[]{seventh,sixth,fifth,fourth,third,second,first};
+
+        assertArrayEquals(expected, actual);
+    }
 
 }
