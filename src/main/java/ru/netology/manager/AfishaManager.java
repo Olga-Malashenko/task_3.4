@@ -46,16 +46,20 @@ public class AfishaManager {
         return result;
     }
 
-    public void findById(int id) {
-        repository.findById(id);
-    }
+    //    по заданию не нужно добавлять
+    //    другие методы сверх первой задачи
+//        поэтому закомментила
 
-    public void removeById(int id) {
-        repository.removeById(id);
-    }
-
-    public void removeAll() {
-        repository.removeAll();
-    }
+//    public void findById(int id) {
+//        repository.findById(id);
+//    }
+//
+//    public void removeById(int id) {
+//        repository.removeById(id);
+//    }
+//
+//    public void removeAll() {
+//        repository.removeAll();
+//    }
 
 }

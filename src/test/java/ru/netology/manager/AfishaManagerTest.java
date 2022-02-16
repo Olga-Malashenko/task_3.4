@@ -14,14 +14,13 @@ class AfishaManagerTest {
     @Mock
     private AfishaRepository repository = Mockito.mock(AfishaRepository.class);
     @InjectMocks
-    private AfishaManager manager = new AfishaManager(repository);
+    private AfishaManager manager = new AfishaManager(repository,3);
 
     @Test
     public void shouldAdd() {
         Movie[] returned = {first, second, third};
         doReturn(returned).when(repository.findAll());
         verify(repository).findAll();
-
     }
 
     @Test
