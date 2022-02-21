@@ -65,7 +65,7 @@ public class AfishaManagerTest {
         manager.add(seventh);
 
         Movie[] actual = manager.getAll();
-        Movie[] expected = new Movie[]{third, second, first};
+        Movie[] expected = new Movie[]{seventh, sixth, fifth};
 
         assertArrayEquals(expected, actual);
     }

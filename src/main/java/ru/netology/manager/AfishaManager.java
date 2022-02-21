@@ -44,9 +44,9 @@ public class AfishaManager {
             resultLenght = limitForFeed;
         }
         Movie[] result = new Movie[resultLenght];
-        for (int i = 0; i < resultLenght; i++) {
-            int index = resultLenght - i - 1;
-            result[i] = movies[index];
+        for (int i = movies.length - resultLenght; i < movies.length; i++) {
+            int index = movies.length - i - 1;
+            result[index] = movies[i];
         }
         return result;
     }
